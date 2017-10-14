@@ -82,6 +82,8 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
 '''
 DATABASES = {
     'default': {
@@ -94,6 +96,10 @@ DATABASES = {
     }
 }
 '''
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9341be64cd0dc4cbc49e168e200c507bd10f5d32
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

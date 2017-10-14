@@ -9,9 +9,15 @@ from django.contrib.auth.models import User
 
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render
+<<<<<<< HEAD
 from django.views.generic import TemplateView,CreateView,ListView,UpdateView
 from .models import habitacion,cliente,registro
 from .forms import habitacionForm,clienteForm,registroForm
+=======
+from django.views.generic import TemplateView,CreateView,ListView,DeleteView
+from .models import habitacion,cliente
+from .forms import habitacionForm,clienteForm
+>>>>>>> 9341be64cd0dc4cbc49e168e200c507bd10f5d32
 # Create your views here.
 
 class vistaPrincipal(TemplateView):
@@ -65,6 +71,16 @@ class CrearUsuarioView(CreateView):
 	template_name = 'CrearUsuario.html'
 	form_class = UserCreationForm
 	success_url = reverse_lazy('analisis:principal')
+<<<<<<< HEAD
+=======
+
+
+class EliminarHabitacionView(DeleteView):
+	template_name = 'eliminar.html'
+	model = habitacion
+	success_url = reverse_lazy('analisis:principal')
+	
+>>>>>>> 9341be64cd0dc4cbc49e168e200c507bd10f5d32
 #end create user
 
 
