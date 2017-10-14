@@ -9,9 +9,9 @@ from django.contrib.auth.models import User
 
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render
-from django.views.generic import TemplateView,CreateView,ListView
-from .models import habitacion,cliente
-from .forms import habitacionForm,clienteForm
+from django.views.generic import TemplateView,CreateView,ListView,UpdateView
+from .models import habitacion,cliente,registro
+from .forms import habitacionForm,clienteForm,registroForm
 # Create your views here.
 
 class vistaPrincipal(TemplateView):
@@ -64,8 +64,41 @@ class CrearUsuarioView(CreateView):
 	model = User
 	template_name = 'CrearUsuario.html'
 	form_class = UserCreationForm
-	success_url = reverse_lazy('parcial1:principal')
+	success_url = reverse_lazy('analisis:principal')
 #end create user
+
+
+
+#updates
+class EditarCliente(UpdateView):
+	template_name = 'cliente.html'
+	model = cliente
+	form_class = clienteForm
+	success_url = reverse_lazy('analisis:listaCliente')
+
+class EditarHabitacion(UpdateView):
+	template_name = 'habitacion.html'
+	model = habitacion
+	form_class = habitacionForm
+	success_url = reverse_lazy('analisis:listaHabitacion')
+
+
+
+#registro
+class vistaRegistro(CreateView):
+	template_name = 'registro.html'
+	form_class =  registroForm
+	success_url = reverse_lazy('analisis:principal')
+
+class listaRegistro(ListView):
+	template_name = 'listaRegistro.html'
+	model = registro
+
+	def get_queryset(self):
+		return registro.objects.all()
+
+
+
 '''
 usuario:	jennifer
 contrasena:	aimeaime

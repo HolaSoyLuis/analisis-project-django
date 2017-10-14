@@ -26,8 +26,15 @@ class cliente(models.Model):
 	habitacion = models.ForeignKey(habitacion)
 	nombre = models.CharField(max_length = 150)
 	dpi = models.CharField(max_length = 20)
+
+	def __str__(self):
+		return '%s %s %s' % (self.nombre,self.dpi,self.habitacion)
+
+class registro(models.Model):
+	ccliente = models.ForeignKey(cliente)
+	hhabitacion = models.ForeignKey(habitacion)
 	fecha_ingreso = models.DateTimeField(auto_now_add = True)
 	fecha_egreso = models.DateTimeField()
 
 	def __str__(self):
-		return '%s %s %s' % (self.nombre,self.dpi,self.habitacion)
+		return '%s %s' % (self.ccliente,self.hhabitacion)

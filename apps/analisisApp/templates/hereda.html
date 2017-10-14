@@ -50,10 +50,12 @@
 		-->
 		<td><a href="{% url 'analisis:habitacion' %}" class="btn btn-success">Habitacion</a></td>
 		<td><a href="{% url 'analisis:cliente' %}" class="btn btn-info">Cliente</a></td>
+
+		<td><a href="{% url 'analisis:registro' %}" class="btn btn-default">Registros</a></td>
 		{% endif %}
 
 		{% if user.is_authenticated == False %}
-			<td><a href="{% url 'analisis:login' %}" class="btn btn-default">login</a></td>		
+			<td><a href="{% url 'analisis:login' %}" class="btn btn-default">login</a></td>
 		{% endif %}
 
 	</tr>

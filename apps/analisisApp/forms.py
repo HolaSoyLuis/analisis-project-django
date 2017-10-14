@@ -1,7 +1,6 @@
 from django import forms
 #from django import forms.ModelForm
-#from .models import habitacion,cliente,NewUser
-from .models import habitacion,cliente
+from .models import habitacion,cliente,registro
 
 class habitacionForm(forms.ModelForm):
 	class Meta:
@@ -12,9 +11,9 @@ class clienteForm(forms.ModelForm):
 	class Meta:
 		model = cliente
 		fields = '__all__'
-'''
-class NewUserForm(forms.ModelForm):
+
+class registroForm(forms.ModelForm):
 	class meta:
-		model = NewUser
+		model = registro
 		fields = '__all__'
-'''
+

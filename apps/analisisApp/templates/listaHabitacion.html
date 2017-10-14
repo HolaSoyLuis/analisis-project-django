@@ -11,7 +11,7 @@
 		<td>Descripcion</td>
 		<td>Ocupado</td>
 		<td>Fecha de creacion/registro habitacion</td>
-		<td>Fotografia de la habitacion</td>
+		<td>Editar</td>
 	</tr>
 
 	{% for est in object_list %}
@@ -21,7 +21,12 @@
 		<td>{{ est.descripcion }}</td>
 		<td>{{ est.ocupado }}</td>
 		<td>{{ est.fecha }}</td>
+		<td>
+			<a href="{% url 'analisis:EditarHabitacion' est.id %}">Editar</a>
+		</td>
+		<!--
 		<img src="">
+		-->
 	</tr>
 
 	{% endfor %}
