@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 #from .views import vistaPrincipal,vistaEstudiante,listaEstudiante,vistaEstudianteAdministrador,listaEstudianteAdministrador,vistaArticulo,listaArticulo,vistaComentario,listaComentario,LoginView,vistaVideo
-from .views import vistaPrincipal,vistaHabitacion,listaHabitacion,vistaCliente,listaCliente,LoginView,CrearUsuarioView
+from .views import EliminarHabitacionView,vistaPrincipal,vistaHabitacion,listaHabitacion,vistaCliente,listaCliente,LoginView,CrearUsuarioView
 from django.contrib.auth.views import login,logout
 
 urlpatterns = [
@@ -25,6 +25,9 @@ urlpatterns = [
     
 	url(r'^habitacion$', vistaHabitacion.as_view(), name = 'habitacion'),
     url(r'^listaHabitacion$', listaHabitacion.as_view(), name = 'listaHabitacion'),
+    url(r'^EliminarHabitacion/(?P<pk>\d+)/$', EliminarHabitacionView.as_view(), name = 'EliminarHabitacion'),
+
+    
 
     url(r'^cliente$', vistaCliente.as_view(), name = 'cliente'),
     url(r'^listaCliente$', listaCliente.as_view(), name = 'listaCliente'),

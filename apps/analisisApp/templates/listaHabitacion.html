@@ -22,6 +22,7 @@
 		<td>{{ est.ocupado }}</td>
 		<td>{{ est.fecha }}</td>
 		<img src="">
+		<td><a href="{% url 'analisis:EliminarHabitacion' est.id %}">Eliminar</a>
 	</tr>
 
 	{% endfor %}
